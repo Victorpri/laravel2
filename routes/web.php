@@ -14,25 +14,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('country/store');
 });
 
-Route::get('/colombia', function () {
-    return view('colombia');
-});
+// Route::get('/colombia', function () {
+//     return view('colombia');
+// });
 
-Route::get('/peru', function () {
-    return view('peru');
-});
+// Route::get('/peru', function () {
+//     return view('peru');
+// });
 
-Route::get('/bolivia', function () {
-    return view('bolivia');
-});
+// Route::get('/bolivia', function () {
+//     return view('bolivia');
+// });
 
-Route::get('/mexico', function () {
-    return view('mexico');
-});
+// Route::get('/mexico', function () {
+//     return view('mexico');
+// });
 
-Route::get('/brazil', function () {
-    return view('brazil');
-});
+// Route::get('/brazil', function () {
+//     return view('brazil');
+// });
+
+// Route::get('/app', function () {
+//     return view('layouts/app');
+// });
+
+
+
+
+Route::get('/country', [CountryController::class,'index'])->name('	country.index');
+Route::post('/country', [CountryController::class,'store'])->name('	country.store');
